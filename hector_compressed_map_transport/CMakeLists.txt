@@ -25,6 +25,8 @@ endif()
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
+find_package(TIFF)
+
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
 ## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
@@ -98,6 +100,7 @@ add_executable(map_to_image_node src/map_to_image_node.cpp)
 target_link_libraries(map_to_image_node
   ${catkin_LIBRARIES}
   ${OpenCV_LIBRARIES}
+  ${TIFF_LIBRARIES}
 )
 
 #############
